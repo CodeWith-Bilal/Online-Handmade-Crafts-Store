@@ -56,7 +56,7 @@
                 </nav> 
                   <div class="row">
                             <div class="col-lg-12 mb-4">
-                                <div class="card shadow mb-4">                    
+                                <div class=" shadow mb-4">                    
                                     <div class="card-body">
                                         <h4 style="color:#1f1fd4;">Registered Users</h4>
                                         <div class="table-responsive">

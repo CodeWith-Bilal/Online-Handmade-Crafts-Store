@@ -1,33 +1,36 @@
 <?php 
-    $errors = array();  
+session_start(); // Start the session
 
-    // connect to the database
-    $db = mysqli_connect('localhost', 'root', '', 'handmade_crafts_prototype');
-    // $db = mysqli_connect('localhost', 'Username', 'Password', 'Database');
+$errors = array();  
 
-    if (isset($_POST['login_user'])) {
-      $email = mysqli_real_escape_string($db, $_POST['email']);
-      $Password = mysqli_real_escape_string($db, $_POST['Password']);
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'handmade_crafts_prototype');
 
-      if (empty($email)) {
-        array_push($errors, "email is required");
-      }
-      if (empty($Password)) {
-        array_push($errors, "Password is required");
-      }
+if (isset($_POST['login_user'])) {
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $Password = mysqli_real_escape_string($db, $_POST['Password']);
 
-      if (count($errors) == 0) {
-        $query = "SELECT * FROM `users` WHERE `email`='$email' AND `Password`='$Password' ";
-        $results = mysqli_query($db, $query);
-        $users = mysqli_fetch_assoc($results);
+  if (empty($email)) {
+    array_push($errors, "email is required");
+  }
+  if (empty($Password)) {
+    array_push($errors, "Password is required");
+  }
 
-        if ($users) {
-             header('location: users.php');
-        }else {
-            array_push($errors, "Wrong email OR Password!");
-        }
-      }
+  // Check if there are no errors
+  if (count($errors) == 0) {
+    // Verify user credentials
+    $query = "SELECT * FROM users WHERE email='$email' AND password='$Password'";
+    $results = mysqli_query($db, $query);
+
+    if (mysqli_num_rows($results) == 1) {
+      $_SESSION['email'] = $email; // Set session variable
+      header('location: users.php'); // Redirect to users page
+    } else {
+      array_push($errors, "Wrong email/password combination");
     }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +56,7 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-            <div class="card card-primary">
+            <div class=" card-primary border rounded">
               <div class="card-header">
                 <h4>Login</h4>
               </div>
@@ -78,6 +81,12 @@
                     </div>
                     <input id="password" type="password" class="form-control" name="Password" required>
                   </div>
+                  <div class="d-block">
+                      <label for="address" class="control-label">Address</label>
+                    </div>
+                    <input id="password" type="address" class="form-control" name="address" required>
+                  </div>
+                  <a href=""></a>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox"> 
                     </div>
