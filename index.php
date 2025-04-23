@@ -33,26 +33,12 @@
     .custom-navbar .nav-link:hover {
       text-decoration: underline;
     }
-
-    .welcome-text {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 24px;
-      color: #5a6670;
-      font-weight: 500;
-    }
-
-    .page-title {
-      padding: 20px 0;
-      font-size: 20px;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
 
   <div class="container mt-4">
-    <div class="page-title">
+    <div class="font-weight-bold h3">
       Online Handmade Crafts Store
     </div>
 
@@ -73,7 +59,7 @@
       </div>
     </nav>
 
-    <div class="welcome-text">
+    <div class="mt-5 text-center" style="font-size: 24px; color: #5a6670; font-weight: 500;">
       Welcome to Handmade Crafts | My VUID: BC200413857
     </div>
   </div>

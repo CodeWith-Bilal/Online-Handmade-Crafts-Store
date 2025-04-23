@@ -44,12 +44,6 @@
             text-decoration: underline;
         }
 
-        .page-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
@@ -58,7 +52,7 @@
     <section class="section">
         <div class="container mt-5">
             
-            <div class="page-title">Online Handmade Crafts Store</div>
+            <div class="font-weight-bold h3">Online Handmade Crafts Store</div>
 
             <nav class="custom-navbar">
                 <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -96,7 +90,6 @@
                                                 <th scope="col">Study Program</th> 
                                                 <th scope="col">Profile Picture</th> 
                                                 <th scope="col">About Me</th> 
-                                                <th scope="col">Registration Date</th>   
                                               </tr>
                                             </thead>
                                             <tbody>';
@@ -108,7 +101,6 @@
                                         $StudyProgram = $user['study_program']; 
                                         $ProfilePicture = $user['profile_picture']; 
                                         $AboutMe = $user['about_me'];  
-                                        $CreatedAt = $user['created_at'];  
 
                                         echo '<tr> 
                                                 <td>'.$Name.'</td>
@@ -117,7 +109,6 @@
                                                 <td>'.$StudyProgram.'</td>
                                                 <td><img src="'.$ProfilePicture.'" alt="Profile" width="50"></td>
                                                 <td>'.$AboutMe.'</td>
-                                                <td>'.$CreatedAt.'</td>    
                                               </tr>';
                                     }
 

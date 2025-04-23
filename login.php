@@ -52,7 +52,6 @@
             <div class="row">
                 <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
 
-                    <!-- Custom Bootstrap-based Card -->
                     <div class="bg-white shadow rounded p-4 mt-5">
                         <h4 class="text-center mb-4 text-dark">Login</h4>
                         <form method="POST" action="login.php" class="needs-validation" novalidate="">
